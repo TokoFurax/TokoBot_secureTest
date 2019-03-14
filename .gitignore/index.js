@@ -8,7 +8,7 @@ myBot.on("ready", () => {
     myBot.user.setPresence({ game : { name : '_aide', type: 0} });
     console.log("Bot sur une plage paumée");
 })
-myBot.login(process.env.TOKEN);
+myBot.login("NTUwMzI3ODQ1NTg3Nzc5NjA0.D2ad_Q.oE4ahxGbQ2WneOb1tRn-nK3Anng");
 //Clear
 myBot.on('message', message => {
     if(message.content.startsWith( prefix1 + "_clear")) {
@@ -401,21 +401,6 @@ myBot.on('message', message => {
     if (message.content === '_myAvatar') {
       message.reply(message.author.avatarURL);
       console.log("Avatar");
-    }
-});
-myBot.on('message', msg => {
-    if(msg.content[0] === prefix) {
-        if(msg.content === prefix + '__Floralia') {
-            let role = msg.guild.roles.find('name', 'Maire')
-            if(msg.member.roles.find('name', 'Maire')) {
-                msg.member.removeRole(role)
-                msg.reply("Vous n'avez plus le rôle: Maire")
-            }
-            else {
-                msg.member.addRole(role)
-                msg.reply("Vous venez d'obtenir le rôle: Maire")
-            }
-        }
     }
 });
 myBot.on('message', msg => {
